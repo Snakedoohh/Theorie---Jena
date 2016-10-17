@@ -1,0 +1,106 @@
+%-----Config---
+\documentclass[BCOR=6mm,headinclude=true,footinclude=false,12pt,chapterprefix,numbers=noendperiod,twoside,a4paper,openright,titlepage]{scrreprt}%chapterprefix macht, dass "`Kapitel Nr"' ÃÂ¼ber KapitelÃÂ¼berschrift steht, numbers=noendperiod macht, dass hinter der letzten Nummer kein Punkt steht, BCOR ist die Bindekorrektur, also das, was am Innenrand zusÃÂ¤tzlich frei gelassen wird, DVI macht SeitenrÃÂ¤nder grÃÂ¶ÃÂer oder kleiner, headinclude/footinclude zÃÂ¤hlt Kopf/FuÃÂzeilen zum TextkÃÂ¶rper oder eben nicht
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+\setmainfont{Times New Roman}
+\usepackage{fullpage}
+%\raggedbottom%macht dass die letzte Zeile da liegt wo sie eben liegt und nicht auf jeder Seite gleich (sonst werden AbsatzabstÃÂ¤nde gedehnt)
+\usepackage{array,amsmath,amssymb,amstext}
+\usepackage{graphicx,subfig,longtable,makeidx}
+\usepackage[section]{placeins} % verhindert gleiten der Bilder  der 
+%section
+\usepackage{float}
+\usepackage{wrapfig} %fÃÂ¼r textumflossene grafiken: \begin{wrapfigure}{l}{8.5cm} l fÃÂ¼r links, r fÃÂ¼r rechts, cm fÃÂ¼r wie groÃÂ die Box sein soll
+\usepackage{sidecap}%Packet fÃÂ¼r siedecaption, dann statt \begin{figure} \begin{SCfigure}[1] schreiben
+\usepackage{pdfpages}
+\usepackage[colorlinks,pdfpagelabels, pdfstartview = FitH, bookmarksopen = true, bookmarksnumbered = true, linkcolor = black, plainpages = false, hypertexnames = false, citecolor = black]{hyperref}
+\usepackage{url}
+\usepackage{fixltx2e}
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+\usepackage[font=it,labelfont=it]{caption}
+%\setcounter{secnumdepth}{2} % macht das nicht subsubsections nummeriert werden
+\setcapindent{0pt}
+%\sidecaptionvpos{figure}{c}%macht, dass Sidecaptions in der Mitte der HÃÂ¶he der Grafik
+%\setcapindent{0pt} %kein einzug in Bildunterschrifte
+\newcommand{\vektor}[1]{\textbf{\itshape{#1}}} %newcommands verwenden um einheitliche Vektoren zu bekommen
+\renewcommand{\thefootnote}{}%macht, dass FuÃÂnoten nicht nummeriert sind
+\usepackage[headsepline,automark]{scrpage2}%scrpage2 ist Packet fÃÂ¼r Kopf/FuÃÂzeilen, headsepline ist Linie unter Kopfzeile, automark aktualisiert automatisch die Titel in Kopfzeile
+\usepackage[onehalfspacing]{setspace}
+%\unitlength1cm
+%\renewcommand{\baselinestretch} {1.3}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ofoot[\pagemark]{\pagemark}
+\ihead{\headmark}
+\setlength{\textfloatsep}{1cm}
+%\renewcommand*{\chapterpagestyle}{chapter} 
+\graphicspath{{./Bilder/}}
+\setlength{\headsep}{1cm}
+\addtokomafont{sectioning}{\rmfamily}
+\date{\today}
+\begin{document}
+\hyphenation{mag-net-isch Mag-net-feld}
+\hyphenation{mi-cros-co-py}
+%------------------------------------- Titelseite--------------
+
+%\maketitle
+\begin{titlepage}
+\title{\vspace{-1.5cm}
+Theoretische Modelle zum Pinningverhalten von Hochtemperatursupraleitern - von empirischen Modellen bis zur Quanetenmechanik
+\ \\
+\ \\}
+
+\subtitle{
+%\includegraphics[width=0.45\textwidth]{Front_1.png}
+\ \\
+\ \\
+\Large
+	\ \\
+	\Large
+	\ \\
+	\Large
+		\ \\
+	\Large 
+	\author{\textbf{Stephen Ruoß}}
+	\vspace{-0.8cm}}
+%\author{Stephen Ruoß}
+\date{}
+
+\uppertitleback{}
+\pagenumbering{Roman}
+%\setcounter{page}{3}
+\maketitle
+\newpage
+\end{titlepage}
+
+%---------Inhaltsverzeichnis-----------------------------------
+\thispagestyle{empty}
+\section*{}
+\newpage
+\pagenumbering{gobble}
+\include{abstract}
+\thispagestyle{empty}
+\section*{}
+\newpage
+\pagenumbering{Roman}
+\tableofcontents
+
+%---------Einleitung-------------------------------------------
+\newpage
+\thispagestyle{empty}
+\pagenumbering{gobble}
+\section*{}
+\newpage
+\pagenumbering{arabic}
+\include{Einleitung}
+
+%---------Theorie----------------------------------------------
+
+
+
+%\newpage
+%\includepdf[pages=-]{WordDocs/selbst.pdf}
+
+\end{document}
